@@ -13,18 +13,18 @@ df['Survived'].value_counts()
 #Visualizing the count
 sns.countplot(x=df['Survived'], y=df['Pclass'])
 <Axes: xlabel='count' , ylabel='Survived'>
-df["Gender"]
-sns.countplot(x=df['Gender'], y=df['Survived])
-<Axes: xlabel='count' , ylabel='Gender">
+df["Sex"]
+sns.countplot(x=df['Sex'], y=df['Survived])
+<Axes: xlabel='count' , ylabel='Sex'>
 from sklearn.preprocessing import LabelEncoder
 labelencoder=LabelEncoder()
-df['Gender']=labelencoder.fit_transform(df['Gender'])
+df['Sex']=labelencoder.fit_transform(df['Sex'])
 df.head()
-sns.countplot(x=df['Gender'],y=df['Survived'])
-<Axes:xlabel='count' , ylabel='Gender'>
+sns.countplot(x=df['Sex'],y=df['Survived'])
+<Axes:xlabel='count' , ylabel='Sex'>
 #Droping unnecessary coloumn
 df=df.drop(['Age'], axis=1)
-x=df['pclass' , 'Gender']
+x=df['pclass' , 'Sex']
 y=df['Survived']
 from sklearn.model_selection import train_test_split
 x_train,x_test,y_train,y_test = train_test_split(x,y,test_size=0.2, random_state=0)
